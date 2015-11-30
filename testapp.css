@@ -1,0 +1,54 @@
+/* CSS declarations go here */
+#player1, #player2 {
+	height: 150px;
+	width: 100px;
+	border-radius: 20px;
+}
+
+.rps_image {
+  height: 90px;
+  width: 80px;
+  border-radius: 20px;
+}
+
+.rps_red {
+	border: 4px solid red;
+	padding: 0px;
+}
+
+#title {
+	text-align: center;
+	color: purple;
+}
+
+.rps_hidden {
+	display: none;
+}
+
+.rps_show {
+	display: inline;
+}
+
+.wlt_list {
+	display: inline;
+	font-size: 20px;
+	color: green;
+	font-weight: bold;
+	position: relative;
+	left: 65px;
+}
+
+.name_title {
+	display: inline;
+	padding-left: 20px;
+}
+
+.selection {
+	display: inline;
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+	position: relative;
+	left: 110px;
+	bottom: 76px;
+}

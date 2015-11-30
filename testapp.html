@@ -1,0 +1,77 @@
+<head>
+  <title>testapp</title>
+</head>
+
+<body>
+  <h3 id="title">Welcome to Rock Paper Scissors!</h3>
+ <!--  {{> entryfield}}
+  {{> messages}} -->
+  <!-- {{#each tasks}} -->
+    <!-- {{> test}} -->
+  <!-- {{/each}} -->
+  <!-- {{> hello}} -->
+  {{> game}}
+</body>
+
+<template name="entryfield">
+    <input type="text" id="name" placeholder="Name" /> <input type="text" id="message" placeholder="Your Message" />
+</template>
+
+<template name="messages">
+    <p>
+        {{#each messages}}
+            <strong>{{name}}</strong>- {{message}}
+        {{/each}}
+    </p>
+</template>
+
+
+<template name="hello">
+  <button id="click_button">Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+  <br>
+  <button id="reset_button">Reset</button>
+</template>
+
+<template name="test">
+	<p id="incorrect" style="display: none">Choose a number between 0 and 19</p>
+	<form id="play1_name_form">
+  	<input id="play1_name" type="number" name="play1_name" placeholder="Player 1 avatar index number" />
+	</form>
+	<form id="play2_name_form">
+  	<input id="play2_name" type="number" name="play2_name" placeholder="Player 2 avatar index number" />
+  </form>
+	<p>This is to test how you click in real time</p>
+	<p><img id="player1" src="{{player1}}" alt="Player 1"> has been clicked {{play1count}} times.</p>
+  <p>Random RPS generator</p>
+  <div id="play1_rps">
+    <img class="rps_image" id="rock1" src="{{rock1}}" alt="Rock"/>
+    <img class="rps_image" id="paper1" src="{{paper1}}" alt="Paper"/>
+    <img class="rps_image" id="scissors1" src="{{scissors1}}" alt="Scissors"/>
+  </div>
+  <button id="rps1_random">Click to randomize</button>
+	<p><img id="player2" src="{{player2}}" alt="Player 2"> has been clicked {{play2count}} times.</p>
+  <p>Random RPS generator</p>
+  <div id="play2_rps">
+    <img class="rps_image" id="rock2" src="{{rock2}}" alt="Rock"/>
+    <img class="rps_image" id="paper2" src="{{paper2}}" alt="Paper"/>
+    <img class="rps_image" id="scissors2" src="{{scissors2}}" alt="Scissors"/>
+  </div>
+  <button id="rps2_random">Click to randomize</button>
+</template>
+
+<template name="game">
+  {{#each users}}
+    <h3 class="name_title">{{player}}</h3><p class="wlt_list">Wins  {{win}} |  Losses  {{loss}}  |  Ties  {{tie}}</p><br>
+    <input style="display: none" id="{{name}}win" value={{win}}>
+    <input style="display: none" id="{{name}}loss" value={{loss}}>
+    <input style="display: none" id="{{name}}tie" value={{tie}}>
+    <img id="{{name}}" src="{{url}}" alt="{{choice}}">  <p class="selection"> {{choice}}  {{wlt}}</p>
+    <div id="play1_rps">
+      <img class="rps_image {{rock_class}}" id="{{name}}rock" src="{{rock_url}}" alt="{{_id}}"/>
+      <img class="rps_image {{paper_class}}" id="{{name}}paper" src="{{paper_url}}" alt="{{_id}}"/>
+      <img class="rps_image {{scissors_class}}" id="{{name}}scissors" src="{{scissors_url}}" alt="{{_id}}"/>
+    </div>   
+  {{/each}}
+  <button id="another_game">Another game?</button>
+</template>
